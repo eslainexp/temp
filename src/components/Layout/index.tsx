@@ -5,11 +5,10 @@ import { Link } from "react-router-dom";
 import { WalletModalProvider } from "@solana/wallet-adapter-ant-design";
 
 import { LABELS } from "../../constants";
-import { AppBar } from "../AppBar";
 import Sidebar from "../Sidebar";
 import Navbar from "../Navbar";
 
-const { Header, Content } = Layout;
+const { Header } = Layout;
 
 export const AppLayout = React.memo(({ children }) => {
   return (

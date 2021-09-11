@@ -26,25 +26,6 @@ export default function Navbar() {
             Dashboard
           </a>
           {/* Form */}
-          <div className="md:flex hidden flex-row flex-wrap items-center lg:ml-auto">
-            <WalletMultiButton type="primary" />
-          </div>
-          <div className="md:flex hidden flex-row flex-wrap items-center lg:ml-auto">
-          {connected ? <WalletDisconnectButton type="text" /> : null}
-            <Popover
-              placement="topRight"
-              title={LABELS.SETTINGS_TOOLTIP}
-              content={<Settings />}
-              trigger="click"
-              >
-            <Button
-              shape="circle"
-              size="large"
-              type="text"
-              icon={<SettingOutlined />}
-            />
-            </Popover>
-            </div>
           {/* User */}
           <ul className="flex-col md:flex-row list-none items-center hidden md:flex">
             {/* <UserDropdown /> */}

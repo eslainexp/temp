@@ -1,14 +1,42 @@
+import { SettingOutlined } from "@ant-design/icons";
+import { WalletDisconnectButton, WalletMultiButton } from "@solana/wallet-adapter-ant-design";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { Button, Popover } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
+import { LABELS } from "../../constants";
+import { Settings } from "../Settings";
 
 // import NotificationDropdown from "./NotificationDropdown.js";
 // import UserDropdown from "./UserDropdown.js";
 
 export default function Sidebar() {
+  const { connected } = useWallet();
+
   const [collapseShow, setCollapseShow] = React.useState("hidden");
   return (
     <>
       <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
+        <div>
+            <WalletMultiButton style={{ fontSize: '16px', width: '100%', margin: 0, padding: 0 }} type="primary" />
+          </div>
+          <div>
+          {connected ? <WalletDisconnectButton type="text" /> : null}
+            <Popover
+              placement="topRight"
+              title={LABELS.SETTINGS_TOOLTIP}
+              content={<Settings />}
+              trigger="click"
+              >
+            <Button
+              shape="circle"
+              size="large"
+              type="text"
+              icon={<SettingOutlined />}
+            />
+            </Popover>
+            </div>
+        
         <div className="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
           {/* Toggler */}
           <button
@@ -23,7 +51,7 @@ export default function Sidebar() {
             className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             to="/"
           >
-            Tailwind Starter Kit
+            Solona
           </Link>
           {/* User */}
           <ul className="md:hidden items-center flex flex-wrap list-none">
