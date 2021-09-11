@@ -16,27 +16,10 @@ export default function Sidebar() {
   const [collapseShow, setCollapseShow] = React.useState("hidden");
   return (
     <>
-      <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
+      <nav className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-hidden md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
         <div>
             <WalletMultiButton style={{ fontSize: '16px', width: '100%', margin: 0, padding: 0 }} type="primary" />
-          </div>
-          <div>
-          {connected ? <WalletDisconnectButton type="text" /> : null}
-            <Popover
-              placement="topRight"
-              title={LABELS.SETTINGS_TOOLTIP}
-              content={<Settings />}
-              trigger="click"
-              >
-            <Button
-              shape="circle"
-              size="large"
-              type="text"
-              icon={<SettingOutlined />}
-            />
-            </Popover>
-            </div>
-        
+          </div>        
         <div className="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
           {/* Toggler */}
           <button
@@ -161,7 +144,22 @@ export default function Sidebar() {
             </ul>
             {/* Divider */}
             <hr className="my-4 md:min-w-full" />
-            
+            <div>
+          {connected ? <WalletDisconnectButton type="text" /> : null}
+            <Popover
+              placement="topRight"
+              title={LABELS.SETTINGS_TOOLTIP}
+              content={<Settings />}
+              trigger="click"
+              >
+            <Button
+              shape="circle"
+              size="large"
+              type="text"
+              icon={<SettingOutlined />}
+            />
+            </Popover>
+          </div>
           </div>
         </div>
       </nav>
