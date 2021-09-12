@@ -1,0 +1,35 @@
+.menu-section {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+
+    padding: .5rem 1rem;
+    font-weight: 500;
+
+    position: relative;
+    margin-top: .5rem;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    border-radius: .5rem;
+    background-color: transparent;
+
+    *, :after, :before {
+        --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgba(59,130,246,0.5);
+        --tw-ring-offset-shadow: 0 0 transparent;
+        --tw-ring-shadow: 0 0 transparent;
+    }
+
+    .active {
+        --tw-bg-opacity: 1;
+        background-color: rgba(247,234,249,var(--tw-bg-opacity));
+        --tw-text-opacity: 1;
+        color: rgba(177,51,207,var(--tw-text-opacity));
+    }
+}

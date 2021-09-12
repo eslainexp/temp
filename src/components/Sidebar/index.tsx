@@ -6,6 +6,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { LABELS } from "../../constants";
 import { Settings } from "../Settings";
+import "./index.less"
 
 // import NotificationDropdown from "./NotificationDropdown.js";
 // import UserDropdown from "./UserDropdown.js";
@@ -88,58 +89,19 @@ export default function Sidebar() {
             <ul className="md:flex-col md:min-w-full flex flex-col list-none">
               <li className="items-center">
                 <Link
-                  className="text-black-500 hover:text-black-600 text-xs uppercase py-3 font-bold block"
+                  className="group menu-section"
+                  to="/"
+                >
+                  <i className="fas fa-newspaper text-blueGray-400 mr-2 text-sm"></i> Home
+                </Link>
+              </li>
+              <li className="items-center">
+                <Link
+                  className="group menu-section active"
                   to="/dashboard"
                 >
-                  <i className="fas fa-tv opacity-75 mr-2 text-sm"></i> Dashboard
+                  <i className="fas fa-tv opacity-75 mr-2 text-sm"></i> NFT Board
                 </Link>
-              </li>
-
-              <li className="items-center">
-                <Link
-                  className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-                  to="/"
-                >
-                  <i className="fas fa-newspaper text-blueGray-400 mr-2 text-sm"></i> Landing Page
-                </Link>
-              </li>
-
-              <li className="items-center">
-                <Link
-                  className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-                  to="/"
-                >
-                  <i className="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i> Profile Page
-                </Link>
-              </li>
-
-              <li className="items-center">
-                <Link
-                  className="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-                  to="/"
-                >
-                  <i className="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i> Login
-                </Link>
-              </li>
-
-              <li className="items-center">
-                <a
-                  className="text-blueGray-300 text-xs uppercase py-3 font-bold block"
-                  href="#pablo"
-                  onClick={e => e.preventDefault()}
-                >
-                  <i className="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i> Register (soon)
-                </a>
-              </li>
-
-              <li className="items-center">
-                <a
-                  className="text-blueGray-300 text-xs uppercase py-3 font-bold block"
-                  href="#pablo"
-                  onClick={e => e.preventDefault()}
-                >
-                  <i className="fas fa-tools text-blueGray-300 mr-2 text-sm"></i> Settings (soon)
-                </a>
               </li>
             </ul>
             {/* Divider */}

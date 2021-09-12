@@ -35,6 +35,7 @@ export function useLocalStorageState(key: string, defaultState?: string) {
       if (newState === null) {
         localStorage.removeItem(key);
       } else {
+        localStorage.removeItem(key);
         localStorage.setItem(key, JSON.stringify(newState));
       }
     },
