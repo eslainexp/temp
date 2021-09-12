@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useMemo, useCallback, useContext } from 'react';
+import React, { useState, useMemo, useContext } from 'react';
 import { Layout, Row, Col, Tabs } from 'antd';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { CardView } from '../components/card';
@@ -15,17 +15,10 @@ export enum ArtworkViewState {
 }
 
 export const DashboardView = () => {
-  const { connected, publicKey } = useWallet();
-  const nftArt = useRef({})
+  const { connected } = useWallet();
   const art = useContext(ArtweaveContext)
   // console.log(artContent)
   const [activeKey, setActiveKey] = useState(ArtworkViewState.Metaplex);
-  const breakpointColumnsObj = {
-    default: 4,
-    1100: 3,
-    700: 2,
-    500: 1,
-  };
 
   const artworkGrid = useMemo(() => {
     return (<><CardView arweave={art.artContent} /></>)}

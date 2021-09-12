@@ -16,7 +16,7 @@ import {
   getSolongWallet,
   getTorusWallet,
 } from "@solana/wallet-adapter-wallets";
-import { ArtweaveContext, ArtweaveProvider } from "./contexts/arweave";
+import { ArtweaveProvider } from "./contexts/arweave";
 
 export function Routes() {
   const wallets = useMemo(

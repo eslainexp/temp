@@ -1,17 +1,8 @@
-import { SettingOutlined } from "@ant-design/icons";
-import { WalletDisconnectButton, WalletMultiButton } from "@solana/wallet-adapter-ant-design";
-import { useWallet } from "@solana/wallet-adapter-react";
-import { Button, Popover } from "antd";
 import React from "react";
-import { Settings } from "../Settings";
-import { LABELS } from "../../constants";
-
 
 // import UserDropdown from "./UserDropdown.js";
 
 export default function Navbar() {
-  const { connected } = useWallet();
-
   return (
     <>
       {/* Navbar */}

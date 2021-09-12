@@ -1,17 +1,13 @@
-import { PublicKey } from "@solana/web3.js";
 import Arweave from "arweave"
-import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from "react";
+import React, { createContext, useContext, useState, useEffect, useMemo } from "react";
 
 export const ArtweaveContext = createContext({ artPubkey: '', artContent: {} })
 
 export const useArtweaveContext = () => useContext(ArtweaveContext)
 
-//export const ArtweaveProvider = async (pubKey: PublicKey | null) => {
-
 export const ArtweaveProvider = ({children}) => {
-  const [artPubkey, setArtPubkey] = useState('')
+  const [artPubkey] = useState('')
   const [artContent, setArtContent] = useState({})
-  const [artSign, setArtSign] = useState({})
 
 
     const arweave = Arweave.init({
@@ -36,7 +32,7 @@ export const ArtweaveProvider = ({children}) => {
       setArtContent(JSON.parse(arweaveRes.toString()))
     })  
     callArwave()
-  }, [])
+  }, [arweave.transactions])
 
     return (
       <ArtweaveContext.Provider value={contextValue}>
