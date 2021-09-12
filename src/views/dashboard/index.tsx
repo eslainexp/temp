@@ -39,6 +39,9 @@ export const DashboardView = () => {
                 key={ArtworkViewState.Metaplex}
               >
                 {artworkGrid}
+                  <br />
+                  <br />
+                  <br />
               </TabPane>
               {connected && (
                 <TabPane
@@ -46,6 +49,9 @@ export const DashboardView = () => {
                   key={ArtworkViewState.Owned}
                 >
                   {artworkGrid}
+                  <br />
+                  <br />
+                  <br />
                 </TabPane>
               )}
               {connected && (
@@ -54,6 +60,9 @@ export const DashboardView = () => {
                   key={ArtworkViewState.Created}
                 >
                   {artworkGrid}
+                  <br />
+                  <br />
+                  <br />
                 </TabPane>
               )}
             </Tabs>
